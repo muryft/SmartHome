@@ -1,3 +1,6 @@
+#ifndef SMARTDEVICE_H
+#define SMARTDEVICE_H
+
 class SmartDevice {
 protected:
     string id;
@@ -14,4 +17,4 @@ public:
 
     virtual void showStatus() const = 0;
 };
-
+#endif
