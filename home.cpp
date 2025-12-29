@@ -43,18 +43,30 @@ int main() {
                 cout << "Invalid type!\n";
             break;
 
-        case 2:
-            cout << "Device ID to turn ON: ";
-            cin >> id;
-            home.turnOn(id);
-            break;
+            case 2:
+                cout << "Device ID to turn ON: ";
+                cin >> id;
+                if(home.findDevice(id) == NULL){
+                    cout<<"Device is not found. Please try again."<<endl;
+                    break;
+                }else{
+                    home.turnOn(id);
+                    cout<<"Device turned on"<<endl;
+                    break;
+                }
 
-        case 3:
-            cout << "Device ID to turn OFF: ";
-            cin >> id;
-            home.turnOff(id);
-            break;
 
+            case 3:
+                cout << "Device ID to turn OFF: ";
+                cin >> id;
+                if(home.findDevice(id) == NULL){
+                    cout<<"Device is not found. Please try again."<<endl;
+                    break;
+                }else {
+                    home.turnOff(id);
+                    cout << "Device turned off" << endl;
+                    break;
+                }
         case 4:
             cout << "Thermostat ID: ";
             cin >> id;
